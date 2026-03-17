@@ -1,0 +1,105 @@
+@use 'reset';
+@font-face {
+    font-family: 'Inter';
+    src: url('../assets/fonts/Inter-VariableFont_slnt\,wght.ttf') format('truetype-variations');
+    font-weight: 400 700;
+    font-display: swap;
+}
+$grey-700: hsl(0%, 0%, 20%);
+$grey-800: hsl(0%, 0%, 12%);
+$grey-900: hsl(0%, 0%, 8%);
+
+$text-primary: hsl(0, 0%, 100%);
+$text-secondary: hsl(75, 94%, 57%);
+
+$bg-primary: $grey-900;
+$bg-secondary: $grey-800;
+$bg-tertiary: $grey-700;
+$bg-accent: hsl(75, 94%, 57%);
+
+body {
+    font-family: 'Inter';
+    background-color: $bg-primary;
+    height: 100dvh;
+}
+main {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+}
+.profile {
+    &-container {
+        background-color: $bg-secondary;
+        max-width: 325px;
+        width: 100%;
+        border-radius: 12px;
+        padding: clamp(1rem, 0.75rem + 1.25vw, 2.25rem);
+    }
+    margin: 0 10px;
+    &-wrapper {
+        display: grid;
+        gap: 32px;
+        width: 100%;
+        text-align: center;
+        justify-items: stretch;
+    }
+    &__header {
+        display: grid;
+        gap: 32px;
+        justify-items: center;
+        align-content: center;
+    }
+    &__img {
+        border-radius: 100%;
+        max-width: 90px;
+        height: auto;
+    }
+    &__name-address {
+        display: grid;
+        gap: 16px;
+    }
+    &__address {
+        color: $text-secondary;
+        font-weight: 700;
+        font-size: 0.875rem;
+    }
+    &__info {
+        display: grid;
+        gap: 30px;
+    }
+    &__description {
+        color: #ececec;
+        font-weight: 400;
+        font-size: 0.875rem;
+    }
+    &__name {
+        color: $text-primary;
+        font-size: 1.5rem;
+        font-weight: 600;
+    }
+}
+.links-list {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 16px;
+}
+
+.link {
+    display: block;
+    color: $text-primary;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.875rem;
+    background-color: $bg-tertiary;
+    padding: 16px 0;
+    width: 100%;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    text-wrap: nowrap;
+    &:hover {
+        background-color: $bg-accent;
+        color: $grey-900;
+    }
+}
